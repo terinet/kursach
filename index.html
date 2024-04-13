@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhancing Digital Inclusion</title>
+<style>
+
+  * {
+    box-sizing: border-box;
+  }
+    body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Barlow", sans-serif;
+    height: 100%;
+  }
+
+nav {
+  background: #fff;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between; /* Keep content spread across the full width */
+  padding: 0 70px; /* This will create the margins on left and right */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav links */
+  align-items: center;
+  width: 100%; /* Use the full width of the nav */
+  max-width: 1200px; /* You can adjust this as per your layout requirement */
+  margin: 0 auto; /* Center within the navigation */
+}
+
+nav .logo {
+  font-size: 26px;
+  font-weight: bolder;
+  flex: 1;
+  text-align: left; /* Aligns the text to the left */
+  margin: 20px;
+}
+
+nav .nav-links {
+  flex: 2; /* Allows nav links to take twice as much space as logo */
+  display: flex;
+  justify-content: flex-end; /* Aligns the links to the right */
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin-left: 17px; /* Creates spacing between links */
+  border: 2px solid #000; /* Keeps the box around the link */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav .nav-links a:hover {
+  background-color: #B02A1D;
+  color: #fff;
+}
+
+
+/* Ensure the logo takes up the left half and nav-links the right half */
+
+.logo, .nav-links {
+  flex-basis: 50%;
+}
+
+  
+
+  .hero-section, .mission-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+
+  .hero-section .text-content, .mission-section .text-content {
+    width: 50%;
+    padding: 50px;
+    font-size: 25px;
+  }
+
+  .hero-section .text content h1, .mission-section .text-content{
+    margin-top: 100px; 
+  }
+
+  .hero-section .image-content, .mission-section .image-content {
+    width: 50%;
+    height: 100vh;
+    position: relative;
+  }
+
+  .hero-section .text-content h1 {
+  font-size: 40px; /* Large size for main title */
+  margin-top: 20px; /* Space below the title */
+}
+
+  .hero-section .text-content p {
+  color: #B02A1D; 
+  font-weight: bold;
+  font-size: 18px; /* Standard paragraph size */
+ // margin-bottom: 20px; /* Space below the paragraph */
+  }
+  
+  .hero-section .image-content::after, .mission-section .image-content::after {
+    content: '';
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .hero-section .image-content::after {
+    background-image: url('pic1.png');
+    background-size: 110%; /* Ensures the background image is scaled to fit */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+
+  .mission-section .image-content::after {
+    background-image: url('pic2.jpeg');
+    background-size: 70%; /* Ensures the background image is scaled to fit */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+
+/* Services Section */
+
+.services-section {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.services-intro {
+  text-align: center;
+  padding: 20px;
+}
+
+.services-intro h2 {
+  font-size: 2em;
+  color: #000;
+}
+
+.services-intro p {
+  font-size: 1.25em;
+  color: #000;
+  max-width: 800px;
+  margin: 0 auto; /* Center the text */
+}
+
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center service boxes */
+  align-items: center; /* Align items vertically */
+  gap: 40px; /* Adjust the space between boxes */
+  padding: 50px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.service-box {
+  width: 30%; /* Adjust width to maintain the size */
+  margin-bottom: 40px; /* Adjust bottom margin for spacing between rows */
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.service-box img {
+  width: 100%;
+  display: block;
+}
+
+.service-box h3 {
+  background-color: transparent;
+  padding: 15px;
+  font-size: 24px;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.service-box h3:hover {
+  color: #B02A1D;
+  cursor: pointer;
+}
+
+.service-box p {
+  padding: 0 15px 15px;
+  font-size: 18px;
+  color: #000;
+}
+
+
+/* Contact Section*/
+
+.contact-section-wrapper {
+  text-align: left;
+  background-color: #fff; /* Set background to white */
+  padding: 50px 0; /* Add padding to the top and bottom */
+}
+
+.contact-header {
+  font-size: 40px; 
+  text-align: left;
+  padding-left: 69px; /* This should match the left padding of the contact-form */
+  margin-bottom: 20px; /* Space below title and paragraph */
+}
+.contact-header p{
+  font-size: 22px;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px; /* Horizontal padding, adjust if necessary to match the layout */
+  background-color: #fff; /* Set background to white */
+}
+
+.contact-header h2, .contact-header p {
+  margin-bottom: 20px; /* Space below title and paragraph */
+}
+
+
+.contact-form, .contact-info {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.contact-form p {
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-form form label,
+.checkbox-container {
+  font-size: 19px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-form form input,
+.contact-form form textarea,
+.checkbox-container {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-form form button{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  padding: 10px;
+  border: 1px solid #000000;
+}
+
+.contact-form form button {
+  background-color: #B02A1D;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+
+}
+
+.contact-form form button:hover {
+  background-color: #45a049;
+}
+
+.checkbox-container input {
+  margin-right: 20px;
+}
+
+.checkbox-container label {
+  display: inline-block;
+}
+
+
+.contact-info {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-wrapper {
+  background-color: #f0f0f0;
+  padding: 40px;
+  text-align: left;
+  width: 80%; /* Adjust the width as per your requirement */
+  margin: 0 auto; /* Center the wrapper */
+}
+
+.info-wrapper a {
+  color: #000; /* Set the link color to black */
+  text-decoration: underline; /* Ensure the link is underlined */
+}
+
+.info-wrapper a:hover {
+  color: #B02A1D; /* Change to the desired color on hover */
+  text-decoration: none; /* Optional: Remove the underline on hover if desired */
+}
+
+.contact-location {
+  color: #000; /* Set the text color to black */
+  text-decoration: underline; /* Ensure the text is underlined */
+}
+
+.contact-location:hover {
+  color: #B02A1D; /* Change to the desired color on hover */
+  text-decoration: none; /* Optional: Remove the underline on hover if desired */
+}
+
+
+.hours-table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.hours-table td:first-child {
+  text-align: left;
+}
+
+.hours-table td:last-child {
+  text-align: left;
+}
+
+button, .submit-btn {
+  background-color: #B02A1D; /* red background */
+  color: white;
+  padding: 20px 15px; /* Twice as thick padding */
+  font-size: 22px; /* Larger font size */
+  margin-top: 30px;
+  border: none;
+  border-radius: 0; /* Square edges */
+  cursor: pointer;
+  display: inline-block; /* Center the button */
+  width: auto; /* Button width auto for content size */
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  //margin: 0 auto; /* Center button if it's a block */
+}
+
+
+button:hover, .submit-btn:hover {
+  background-color: #45a049;
+}
+
+.contact-form .submit-btn {
+  font-size: 50px;
+  display: block; /* Make the button a block to center it */
+  width: fit-content; /* Fit the content's width */
+  margin: 0 auto; /* Center the button */
+}
+
+/* Responsive adjustments for contact section */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 0 20px; /* Adjust based on your responsive design needs */
+  }
+
+  .contact-header {
+    padding-left: 20px; /* This should match the responsive left padding of the contact-form */
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navbar-inner">
+    <div class="logo">ENHANCING<br>DIGITAL<br>INCLUSION</div>
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICES</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-section">
+  <div class="image-content"></div>
+  <div class="text-content">
+    <p>DIGITAL INCLUSION</p>
+    <h1>Empowering older adults through technology</h1>
+    <button>VIEW SERVICES</button>
+  </div>
+</div>
+
+<div class="mission-section">
+  <div class="text-content">
+    <h2>OUR MISSION</h2>
+    <p>At Enhancing Digital Inclusion, we are committed to providing user-centered design solutions for older <br>adults in Irpin. Our mission is to ensure that every older <br>adult has the opportunity to embrace technology and <br>benefit from the digital world. By fostering digital <br>inclusion, we aim to create a more connected, <br>empowered, and engaged community of older adults.</p>
+    <button>Get in touch</button>
+  </div>
+  <div class="image-content"></div>
+</div>
+
+
+
+<div class="services-section">
+  <div class="services-intro">
+    <h2>Learn more about the services we offer</h2>
+    <p>Enhancing Digital Inclusion: User-Centered Design for Older Adults provides a wide range of services for the entire Irpin region.</p>
+  </div>
+  <div class="service-container">
+    <div class="service-box">
+      <img src="pic3.jpeg" alt="Digital Literacy Workshops">
+      <h3>Digital Literacy Workshops</h3>
+      <p>Engage in interactive workshops to improve digital skills and confidence.</p>
+    </div>
+    <div class="service-box">
+      <img src="pic4.jpeg" alt="Tech Support Services">
+      <h3>Tech Support Services</h3>
+      <p>Receive personalized assistance and troubleshooting for tech issues.</p>
+    </div>
+    <div class="service-box">
+      <img src="pic5.jpeg" alt="Digital Wellness Seminars">
+      <h3>Digital Wellness Seminars</h3>
+      <p>Participate in informative seminars to promote digital well-being.</p>
+    </div>
+<!-- 
+    <div class="service-box">
+      <img src="pic6.jpeg" alt="User-Friendly Device Workshops">
+      <h3>User-Friendly Device Workshops</h3>
+      <p>Learn how to use devices designed for older adults with ease.</p>
+    </div>
+    <div class="service-box">
+      <img src="pic7.jpeg" alt="Digital Security Training">
+      <h3>Digital Security Training</h3>
+      <p>Gain essential knowledge and skills for staying safe online.</p>
+    </div>
+    <div class="service-box">
+      <img src="pic8.png" alt="Technology Adoption Consultations">
+      <h3>Technology Adoption Consultations</h3>
+      <p>Receive personalized guidance for adopting new technology.</p>
+    </div>
+-->
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact-section-wrapper">
+  <div class="contact-header">
+    <h2>Contact Us</h2>
+    <p>Feel free to give us a call or send us an email with your questions or comments.</p>
+  </div>
+<div class="contact-section">
+  <div class="contact-form">
+    <form action="/submit-form" method="POST">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required placeholder="Jane Smith">
+      
+      <label for="email">Email address *</label>
+      <input type="email" id="email" name="email" required placeholder="email@website.com">
+      
+      <label for="phone">Phone number *</label>
+      <input type="tel" id="phone" name="phone" required placeholder="555-555-5555">
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message"></textarea>
+      
+      <div class="checkbox-container">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">I allow this website to store my submission so they can respond to my inquiry. *</label>
+      </div>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  
+  <div class="contact-info">
+    <div class="info-wrapper">
+      <h3>Contact us</h3>
+      <p><a href="mailto:kat.pakholchak@gmail.com">kat.pakholchak@gmail.com</a></p>
+      <h3>Location</h3>
+      <p class="contact-location"><a href="#" class="location-link">Irpin, 32 UA</a></p>
+      <h3>Hours</h3>
+      <table class="hours-table">
+        <tr>
+          <td>Monday</td>
+          <td>9:00am – 10:00pm</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>9:00am – 10:00pm</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>9:00am – 10:00pm</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>9:00am – 10:00pm</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>9:00am – 10:00pm</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>9:00am – 6:00pm</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>9:00am – 12:00pm</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  // If needed, you can add JavaScript here
+</script>
+
+</body>
+</html>
